@@ -1,0 +1,13 @@
+.feedbackStyle{
+    border-style: solid;
+
+  border-color: black;
+
+  border-width: 5px;
+
+  box-shadow: 0 8px 350px 0 rgba(0, 0, 0, 0.5);
+
+  align-content: center;
+
+  margin-right: 0px;
+}
