@@ -64,7 +64,7 @@ export default class CreateOrderPost extends Component {
 
 
     }
-
+window.location='/payhome'
     console.log(data)
 
 

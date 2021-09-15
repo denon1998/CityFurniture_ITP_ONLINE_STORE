@@ -18,7 +18,14 @@
         "react-to-print": "^2.13.0",
         "react-use-cart": "^1.11.2",
         "sweetalert2-react": "^0.8.3",
-        "sweetalert": "^2.1.2"
+        "sweetalert": "^2.1.2",
+        "card-validator": "^8.1.1",
+        "emailjs-com": "^3.2.0",
+        "i": "^0.3.6",
+        "validator": "^13.6.0",
+        "react-credit-cards": "^0.8.3",
+        "react-icons": "^4.2.0",
+        "react-progress-button": "^5.1.0"
     },
     "scripts": {
         "start": "react-scripts start",

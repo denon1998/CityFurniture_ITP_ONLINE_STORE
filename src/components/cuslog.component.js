@@ -7,6 +7,7 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+   
     function validateForm() {
         return email.length > 0 && password.length > 0;
     }
@@ -18,12 +19,12 @@ export default function Login() {
 
     function onSubmit() {
 
-        //   const email = this.state.email
-        //   const password = this.state.password
-
-        if (email === 'customer@gmail.com' && password === 'customer') {
-            window.location = '/home';
-        }
+//           const email = this.state.email
+//           const password = this.state.password
+alert(email)
+        // if (email === 'customer@gmail.com' && password === 'customer') {
+        //     window.location = '/home';
+        // }
 
 
     }
@@ -33,7 +34,7 @@ export default function Login() {
             <div className="Login" >
 
                 <
-                    Form onSubmit={handleSubmit} >
+                    Form   >
                     <
                         Form.Group size="lg"
                         controlId="email" >
@@ -58,15 +59,20 @@ export default function Login() {
                             }
                         />
                     </
-                    Form.Group > <
-                        Button block size="lg"
-                        type="submit"
-                        disabled={!validateForm()}
-                        onClick={onSubmit()} >
-                        Login </
-                    Button> </
+                    
+                    Form.
+                    Group >
+                    
+                    <Button block size="lg" variant="primary "  onClick={()=>{
+                        if (email === 'customer@gmail.com' && password === 'customer') {
+                            window.location = '/home';
+                        }
+                    }}>LOGIN NOW</Button>{' '}
+                    
+                    </
                 Form >
 
+              
 
             </div> </div>
     );
