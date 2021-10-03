@@ -19,9 +19,9 @@ export default function Login() {
 
     function onSubmit() {
 
-//           const email = this.state.email
-//           const password = this.state.password
-alert(email)
+    //       const email = this.state.email
+    //       const password = this.state.password
+    alert(email)
         // if (email === 'customer@gmail.com' && password === 'customer') {
         //     window.location = '/home';
         // }
@@ -64,11 +64,13 @@ alert(email)
                     Group >
                     
                     <Button block size="lg" variant="primary "  onClick={()=>{
-                        if (email === 'customer@gmail.com' && password === 'customer') {
+                        if (email === 'customer@gmail.com' && password === 'customer' || email === 'kasun@gmail.com' && password === 'kasun' ||
+                            email === 'kalum@gmail.com' && password === 'kalum' || email === 'chamidu@gmail.com' && password === 'chamidu' ) {
                             window.location = '/home';
                         }
                     }}>LOGIN NOW</Button>{' '}
-                    
+                    <br/>
+                    <a href="/create"> <button type="button" class="btn btn-secondary btn-lg btn-block"> Create a new account </button></a>
                     </
                 Form >
 
