@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import {Button} from'react-bootstrap' ;
 // import swal from '@sweetalert/with-react' 
 import swal from 'sweetalert';
 
@@ -70,6 +71,8 @@ export default class Createsuggestion extends Component {
     onSubmit(e) {
         e.preventDefault();
 
+        const {Phone,Email} = this.state;
+
         const suggestion = {
             Username: this.state.Username,
             Phone: this.state.Phone,
@@ -80,6 +83,17 @@ export default class Createsuggestion extends Component {
         }
 
         console.log(suggestion);
+
+        //validation
+        const cup = /^[0-9\b]+$/;
+        const cuem = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if((!cup.test(String(Phone))) || (Phone.length != 10)) {
+            swal("Invalid Contact Number !", "contact number should be valide pattern", "error");
+        } else if ((!cuem.test(String(Email)))) {
+            swal("Invalid email address !", "Please enter valid email address !", "error");
+        }
+  
+        else {
 
         axios.post('http://furniture-store-backend.herokuapp.com/api/suggestion/add', suggestion)
             .then(res => console.log(res.data));
@@ -92,7 +106,32 @@ export default class Createsuggestion extends Component {
             .then((value) => {
                 swal(window.location = '#');
             });
-    }
+    }}
+
+    //demo button method
+    demo =() => { 
+    
+        //setState
+        this.setState ({
+            Username: "Jone williyem"
+        })
+    
+        this.setState ({
+            Phone: "0751231234"
+        })  
+    
+        this.setState ({
+            Email: "jone@gmail.com"
+        })
+    
+        this.setState ({
+            date: ""
+        })
+    
+        this.setState ({
+            suggestionMsg: "improve payment method"
+        })
+      }
 
     render() {
         return ( 
@@ -100,7 +139,7 @@ export default class Createsuggestion extends Component {
             <div class="row">
             <div class="col-6">
             <br/><br/><br/><br/>
-            <img src="https://thumbs.dreamstime.com/z/suggestion-word-cloud-concept-grey-background-88650449.jpg" width="100%" height="90% "/>
+            <img src="https://img.freepik.com/free-vector/psychologist-giving-advice-husband-wife_1262-21504.jpg?size=626&ext=jpg&ga=GA1.2.2035669040.1625875200" width="900px" height="600px"/>
             </div>
   
     <div class="col-6">
@@ -148,8 +187,8 @@ export default class Createsuggestion extends Component {
             <div >
             <DatePicker selected = { this.state.date }
             onChange = { this.onChangedate}/> 
-        </div >
-        </div>
+            </div >
+            </div >
 
             <br >
             </br>
@@ -165,10 +204,13 @@ export default class Createsuggestion extends Component {
                    required className = "form-control"
                    value = { this.state.suggestionMsg }
                    onChange = { this.onChangesuggestionMsg }/> 
-        </div >
+            </div >
+            
+            <br ></br>
+            <label style={{ marginBottom: '5px' }} className="topic">Your suggestions and inquiries are important to US. Thank you !</label>
 
-            <br > 
-            </br>
+            <Button variant="primary" onClick={this.demo}>Demo</Button>
+            <br ></br> <br ></br>
 
             <div className = "form-group" >
             <input type = "submit"
@@ -178,8 +220,8 @@ export default class Createsuggestion extends Component {
             </form >
             </div >
             </div >
-          </div >
-        </div> 
+            </div >
+            </div> 
             </div>
             </div>
         )
