@@ -2,16 +2,11 @@ import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Navbar from "./components/navbar.component"
-import AdminDashboard from "./components/admin-dashboard.component"
+import Navbar from "./components/navbar.component";
 
 import EditExercise from "./components/edit-exercise.component";
 import CreateExercise from "./components/create-exercise.component";
-import CreateUser from "./components/create-user.component";
-import userList from "./components/user-list.component";
-import EditUser from "./components/edit-user.components";
 import ExercisesList from "./components/exercises-list.component";
-import main from "./components/main.component";
 import cuslog from "./components/cuslog.component";
 
 
@@ -26,7 +21,7 @@ import { CartProvider } from "react-use-cart";
 import CreateOrderPost from './components/client/home/odermgt/CreateOrderPost';
 import CustomizedOrder from './components/client/home/odermgt/CustomizedOrder';
 import Cart from './components/client/home/cart/Cart';
- 
+
 import HomeClientProduct from './components/client/home/products/HomeClientProduct';
 
  // Kithmini 
@@ -65,17 +60,9 @@ function App() {
                 <Navbar />
                 <br />
                 <
-                    Route path="/admin"
-                    exact component={main}
-
-                />
-                 <
                     Route path="/"
                     exact component={cuslog}
 
-                /> <
-                    Route path="/admindashboard"
-                    exact component={AdminDashboard}
                 /> <
                     Route path="/edit/:id"
                     component={EditExercise}
@@ -85,16 +72,7 @@ function App() {
                 /> <
                     Route path="/create"
                     component={CreateExercise}
-                /> <
-                    Route path="/user/add/"
-                    component={CreateUser}
-                /> <
-                    Route path="/users/"
-                    component={userList}
-                />  <
-                    Route path="/user/Edit/:id"
-                    component={EditUser}
-                />
+                /> 
 
 
                 <Route path='/home' exact component={Home} />
