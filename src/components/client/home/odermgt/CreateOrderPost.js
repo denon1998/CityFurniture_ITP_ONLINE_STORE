@@ -125,8 +125,29 @@ export default class CreateOrderPost extends Component {
 
 
     }
+  }
+  demo =() => { 
 
-
+    //setState
+    this.setState ({
+      name :"Chanduni Nethmini"
+    })
+  
+    this.setState ({
+      postalNo:"259"
+    })
+  
+    this.setState ({
+      street:"Lake road"
+    }) 
+  
+    this.setState ({
+      town:"Colombo2"
+    })
+    this.setState({
+      contactNo:"0710000000"
+    }) 
+  
   }
 
   render() {
@@ -231,15 +252,16 @@ export default class CreateOrderPost extends Component {
       <label style={{ marginBottom: '5px' }} className="topic">Order Total: {this.state.cartTotal}</label>
       <br />
 
-
+      <button type="button" class="btn btn-outline-dark btn-sm" onClick={this.demo} > Demo </button>
+      <br/>
       <button className="btn btn-dark" type="submit" style={{ marginTop: '15px' }} onClick={this.onSubmit}>
         <i className="far fa-check-square"></i>
         &nbsp; Place the Order
       </button>
-     
-      <br />
+    
       <br/>
-      <button className="btn btn-dark"><a href="/payHome">Continue with payment</a></button>
+      <button className="btn btn-dark" type="submit" style={{ marginTop: '15px' }} ><a href="/payHome"> <i className="far fa-check-square" style={{ textDecoration:"none"}}></i>
+        &nbsp; Continue with payment</a></button>
 
     </form>
 
