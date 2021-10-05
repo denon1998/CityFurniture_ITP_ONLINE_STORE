@@ -7,6 +7,10 @@ import newchair from '../images/newchair.jpg';
 import workshop from '../images/workshop.jpg';
 import fabricss from '../images/fabricss.jpg';
 import map from '../images/map.png'
+import working from '../images/working.jpg'
+import cut from '../images/cut.jpeg';
+import Footer from '../Footer';
+
 
 
 
@@ -19,11 +23,11 @@ const CustomizedOrder = (props) => {
   return (
     <div className="container-sm">
 
-      <h2 className="text-center topic"><b>Customized Your Design</b></h2>
+      <h2 className="text-center "><b>Customized Your Design</b></h2>
       <br />
-      <h4 className="text-center" >
-        <p className="textdesign1">
-          <p className="text-danger">
+      <h4 className="text-center " >
+        <p className="fstyle">
+          <p className="text-danger ">
             <b>Looking for a Unique designs ? </b>Or make your <b>Dream furniture </b>from our talented, well-experienced experts.
           </p></p></h4>
       <h3 className="text-center">
@@ -93,7 +97,7 @@ const CustomizedOrder = (props) => {
     
   </p>
   <br/>
-  <h5 className="text-center"><b><a href="#">Contact us for more Details.</a></b></h5>
+  <h5 className="text-center "><b><a href="#">Contact us for more Details.</a></b></h5>
   </div>
   <div class="col-6">
       <img src= {fabricss} style={{width:"100%", height:"101%"}}/>
@@ -114,12 +118,40 @@ const CustomizedOrder = (props) => {
       
     <br/>
     <br/>
-
-    <img src={map} style={{width:"100%", height:"30%"}}/>
-
-    <br/>
-    <br/>
+<div className="container border" style={{ width:"70%", height:"70%"}} >
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src={cut} alt="First slide"/>
     </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src={working} alt="Second slide"/>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://i.pinimg.com/originals/6c/9e/19/6c9e197129299c5af04d8ad1173ad9b9.gif" alt="Third slide"/>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+    {/* <img src={map} style={{width:"100%", height:"30%"}}/>
+
+    <br/>
+    <br/> */}
+     <br/>
+    <br/>
+    <Footer />
+
+    </div>
+    
 
   
 
