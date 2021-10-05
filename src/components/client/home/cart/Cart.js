@@ -3,6 +3,7 @@ import { useCart } from 'react-use-cart';
 import shopping from '../images/shopping.png'
 import phone from '../images/phone.png'
 import './mystyle.css'
+import Footer from '../Footer';
 
 const Cart = () => {
     const {
@@ -91,6 +92,7 @@ const Cart = () => {
                 </div>
             </div>
 
+            <Footer />
 
         </div>
     );
