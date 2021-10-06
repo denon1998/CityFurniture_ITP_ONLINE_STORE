@@ -1,6 +1,6 @@
 video {
     object-fit: cover;
-    width: 100%;
+    width: 99.5%;
     height: 100%;
     position: fixed;
     z-index: -1;

@@ -14,6 +14,7 @@ import Home from './components/client/home/pages/Home';
 import Products from './components/client/home/pages/Products';
 import Offers from './components/client/home/pages/Offers';
 import OfficeFurniture from './components/client/home/pages/OfficeFurniture';
+import Footer from './components/client/home/Footer';
 
 import HomeClientProduct from './components/client/home/products/HomeClientProduct';
 import officeHome from './components/client/home/officeFurniture/officeHome';
@@ -33,8 +34,6 @@ import CreateFAQs from "./components/client/home/contactus/FAQs/create-FAQs";
 import Createsuggestion from "./components/client/home/contactus/suggestion/create-suggestion";
 //import Rating from './components/client/home/contactus/rate/Ratings';
 
-//import Footer from './components/client/home/Footer';
-
 
 import EditPosts from './components/client/home/payment/AdminClientUpdateCard';
 import payHome from './components/client/home/payment/payHomeClient';
@@ -53,9 +52,10 @@ function App() {
     return (<
         Router >
         <CartProvider>
+        <Navbar />
             <
-                div className="container" >
-                <Navbar />
+                div className="" >
+                
                 <br />
                 <
                     Route path="/"
@@ -78,6 +78,7 @@ function App() {
                 <Route path='/offers' exact component={Offers} />
                 <Route path='/officeFurniture' exact component={OfficeFurniture} />
 
+                
                 <Route path="/products" exact component={HomeClientProduct}></Route>
                 <Route path="/officeFurniture" exact component={officeHome}></Route>
 
@@ -108,6 +109,7 @@ function App() {
 
             </
             div >
+            <footer />
         </CartProvider>
     </Router>
     );

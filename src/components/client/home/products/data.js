@@ -73,7 +73,7 @@ const data = {
             Components: 'Components: Fabric large sofa and two small sofas',
             StockAvailability: 'StockAvailability: Available'
         },
-
+        
 
     ],
 };

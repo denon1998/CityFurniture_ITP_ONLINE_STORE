@@ -1,6 +1,6 @@
 .category {
     padding: 4rem;
-    background: #fff;
+    background: rgb(255, 246, 209);
   }
   
   h1 {
@@ -64,14 +64,14 @@
   
   .sub-category__pic-wrap::after {
     content: attr(data-category);
-    position: absolute;
+    position:absolute;
     bottom: 0;
     margin-left: 10px;
     padding: 6px 8px;
     max-width: calc((100%) - 60px);
     font-size: 12px;
     font-weight: 700;
-    color: #fff;
+    color: rgb(255, 255, 255);
     background-color: #1f98f4;
     box-sizing: border-box;
   }
