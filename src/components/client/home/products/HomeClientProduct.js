@@ -6,8 +6,12 @@ import './HomeClientProducts.css';
 const HomeClientProduct = () => {
     console.warn(data.productData)
     return (
+        
+
         <div>
+            <br></br> <br></br>
             <h1 className="text-center mt-3">Home Furniture</h1>
+            <br></br>
                 <section className="py-4 container">
                     <div className="row justify-content-center">
                         {data.productData.map((item, index) => {
@@ -18,9 +22,8 @@ const HomeClientProduct = () => {
                        
                     </div>
             </section> 
-        </div>   
-          
+        </div>           
     );
-  };
-  
+  };    
+ 
   export default HomeClientProduct;

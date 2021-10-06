@@ -3,8 +3,8 @@ import f2 from '../images/f2.jpg';
 import f3 from '../images/f3.jpg';
 import f4 from '../images/f4.png';
 
-const officedata = {
-    productData:[
+const officeData = {
+    officedata:[
         {
             id:'123',
             img:f1,
@@ -78,4 +78,4 @@ const officedata = {
     ],
 };
 
-export default officedata;
+export default officeData;

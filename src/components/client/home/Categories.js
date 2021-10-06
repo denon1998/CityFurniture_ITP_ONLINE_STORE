@@ -5,9 +5,10 @@ import Subcategory from './Subcategory';
 function Categories() { 
   return (
     <div className='category'>
+
       <h1>Check out your dream furniture!</h1>
       <h2>Here Are Our Furniture Categories!</h2>
-      <div className=''>
+      <div className='container'>
         <div className='category__wrapper'>
           <ul className='category__items'> 
             <Subcategory
@@ -22,11 +23,12 @@ function Categories() {
               text='
               We have Office furniture essential for smooth and efficient functioning of an office. It makes office environment comfortable, pleasant and attractive.'
               label='Office Furniture'
-              path='/officeFurniture'
+              path='/products'
             />
           </ul>
           <ul className='category__items'>
-            <Subcategory
+
+          <Subcategory
               src={require('./images/outdoorfurniture.jpg')}
               text='Good outdoor furniture combines this strength and weatherproofing with comfort and versatility.'
               label='Outdoor Furniture'
@@ -34,15 +36,16 @@ function Categories() {
             />
             <Subcategory
               src={require('./images/antiques.jpeg')}
-              text='Here we have a collection of objects such as a piece of furniture or work of art that has an enhanced value because of its considerable age, but it varies depending on the item, its source, the year of its creation.'
-              label='Antiques'
-              path='/offers'
+              text='Home accessories are furniture items which are easy to replace and easy to move, and include almost any items that can functionally necessary in the decorated space.'              
+              label='Furniture Accessories'
+              path='/products'
             />
+            
             <Subcategory
               src={require('./images/accessories.jpg')}
-              text='Home accessories are furniture items which are easy to replace and easy to move, and include almost any items that can functionally necessary in the decorated space.'
-              label='Furniture Accessories'
-              path='/sign-up'
+              text='Here we have a collection of objects such as a piece of furniture or work of art that has an enhanced value because of its considerable age, but it varies depending on the item, its source, the year of its creation.'              
+              label='Antiques'
+              path='/products'
             />
           </ul>
         </div>
