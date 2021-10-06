@@ -35,19 +35,15 @@ import Createsuggestion from "./components/client/home/contactus/suggestion/crea
 
 
 import EditPosts from './components/client/home/payment/AdminClientUpdateCard';
-import CardPayHomeAdmin from './components/client/home/payment/CardPayHomeAdmin';
 import payHome from './components/client/home/payment/payHomeClient';
-import CardPay from './components/client/home/payment/CardPayClient';
 import NavBar from './components/client/home/payment/AdminNavbar';
 
-import PostDetails from './components/client/home/payment/CardDetailsAdmin';
+
 import CardPaySuccess from './components/client/home/payment/CardPaySuccessClient';
 import payPal from './components/client/home/payment/payPalClient';
-import PaypalDisplay from './components/client/home/payment/PaypalDisplayAdmin';
-import PayDetails from './components/client/home/payment/PayDetailsAdmin';
 import PalUpdate from './components/client/home/payment/PalUpdateAdminClient';
 import paypalSuccess from './components/client/home/payment/paypalSuccessClient';
-import mailer from './components/client/home/payment/AdminMailer';
+import CardPayClient from './components/client/home/payment/CardPayClient';
 
 
 function App() {
@@ -99,15 +95,12 @@ function App() {
 
                 <Route path="/payHome" component={payHome}></Route>
                 <Route path ="/edit/:id"  component={EditPosts}></Route>
-                <Route path ="/post/:id"  component={PostDetails}></Route>
-                <Route path="/CardPay" component={CardPay}></Route>
+                <Route path="/CardPay" component={CardPayClient}></Route>
                 <Route path = "/success" component={CardPaySuccess}></Route>
                 <Route path = "/addpaypal" component={payPal}></Route>
-                <Route path = "/payDisplay" component={PaypalDisplay}></Route>
-                <Route path = "/palEdit/:id" component={PayDetails}></Route>
                 <Route path = "/palUpdate/:id" component={PalUpdate}></Route>
                 <Route path = "/palSuccess" component={paypalSuccess}></Route>
-                <Route path = "/mail" component={mailer}></Route>
+            
 
             </
             div >
