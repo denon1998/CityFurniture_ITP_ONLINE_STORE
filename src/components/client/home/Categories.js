@@ -7,7 +7,7 @@ function Categories() {
     <div className='category'>
       <h1>Check out your dream furniture!</h1>
       <h2>Here Are Our Furniture Categories!</h2>
-      <div className='category__container'>
+      <div className=''>
         <div className='category__wrapper'>
           <ul className='category__items'> 
             <Subcategory
@@ -22,7 +22,7 @@ function Categories() {
               text='
               We have Office furniture essential for smooth and efficient functioning of an office. It makes office environment comfortable, pleasant and attractive.'
               label='Office Furniture'
-              path='/products'
+              path='/officeFurniture'
             />
           </ul>
           <ul className='category__items'>

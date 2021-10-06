@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCart } from "react-use-cart";
 
-const ItemCard = (props) => {
+const officeItemCard = (props) => {
     const { addItem } = useCart();
     return (
         <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4">
@@ -37,9 +37,9 @@ const ItemCard = (props) => {
                         addItem(props)
 
                         window.location = '/cart'
-                    }}> Add to Cart </button>
-                    &nbsp;  &nbsp;  &nbsp; &nbsp; 
-                    <br></br> <br></br>
+                    }}> Add To Cart </button>
+                    &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;
+                    <br></br>
                     <button type="button" class="btn btn-primary">Buy Now</button>
 
                 </div>
@@ -48,4 +48,4 @@ const ItemCard = (props) => {
     );
 };
 
-export default ItemCard;
+export default officeItemCard;

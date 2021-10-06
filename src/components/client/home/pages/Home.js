@@ -7,9 +7,11 @@ import Footer from '../Footer';
 function Home() {
   return (
     <div>
+    <div>
       <HeroSection />
       <Categories />
-      <Footer />
+    </div>
+    <Footer />
     </div>
   );
 }

@@ -21,24 +21,20 @@ export default class Navbar extends Component {
                             className="nav-link" > Home </Link> </
                     li >
 
-
-                    <
-                        li className="navbar-item" >
-                        <
-                            Link to="/customized"
-                            className="nav-link" > Customized </Link> </
-                    li >
-
-
-
                     <
                     li className="navbar-item" >
                     <
                         Link to="/products"
                         className="nav-link" > Products </Link> </
                     li >
+                 
 
-
+                    <
+                        li className="navbar-item" >
+                        <
+                            Link to="/customized"
+                            className="nav-link" > Customized </Link> </
+                    li >                        
 
                     <
                         li className="navbar-item" >
@@ -59,12 +55,12 @@ export default class Navbar extends Component {
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
                     <
                     li className="navbar-item" >
                     <
                         Link to="/"
-                        className="nav-link" > Sing Out </Link> </
+                        className="nav-link" > Sign Out </Link> </
                     li >
 
 

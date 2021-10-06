@@ -53,7 +53,7 @@
   .home,
   .products,
   .offers,
-  .sign-up {
+  .officeFurniture {
     display: flex;
     height: 90vh; 
     align-items: center;
@@ -79,8 +79,8 @@
     font-size: 100px;
   }
   
-  .sign-up {
-    background-image: url('./components/client/home/images/dining.jpg');
+.officeFurniture{
+    background-image: url('./components/client/home/images/officeF1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

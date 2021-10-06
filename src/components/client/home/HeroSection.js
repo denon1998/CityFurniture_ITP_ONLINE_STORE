@@ -5,9 +5,11 @@ import './HeroSection.css';
 
 function HeroSection() {
   return (
-    <div className='hero-container' style={{backdropFilter:'blur(10px )'}}>
+    
+    
+    <div className='homeView' style={{backdropFilter:'blur(10px )'}}>
       <video src={ ('https://docs.google.com/uc?export=download&id=16P0ip6-lPi_7p9fAVAH1XGm2aZIsddER')}   autoPlay loop muted />
-      <h1>CITY FURNITURE DESIGNS AWAITS</h1>
+       <h1>CITY FURNITURE DESIGNS AWAITS</h1>
       <p>What are you waiting for?</p>
       <div className='hero-btns'>
         <Button
