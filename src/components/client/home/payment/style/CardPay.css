@@ -22,5 +22,18 @@ to{
     background-color: blue;
 }
 
+.bg-img{
+    
+    border-radius: 50%;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sucess-img{
+    width: 500px;
+    border-radius: 20%;
+}
+
 
 

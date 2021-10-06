@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import {Button} from'react-bootstrap' ;
 // import swal from '@sweetalert/with-react'
 import swal from 'sweetalert';
+//import Rating from "./rate/Rating";
 
 export default class Createfeedback extends Component {
     constructor(props) {
@@ -71,6 +73,8 @@ export default class Createfeedback extends Component {
     onSubmit(e) {
         e.preventDefault();
 
+        const {Phone,Email} = this.state;
+
         const feedback = {
             Username: this.state.Username,
             Phone: this.state.Phone,
@@ -84,6 +88,17 @@ export default class Createfeedback extends Component {
 
         console.log(feedback);
 
+        //validation
+        const cup = /^[0-9\b]+$/;
+        const cuem = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if((!cup.test(String(Phone))) || (Phone.length != 10)) {
+            swal("Invalid Contact Number !", "contact number should be valide pattern", "error");
+        } else if ((!cuem.test(String(Email)))) {
+            swal("Invalid email address !", "Please enter valid email address !", "error");
+        }
+  
+        else {
+
         axios.post('http://furniture-store-backend.herokuapp.com/api/feedback/add', feedback)
             .then(res => console.log(res.data));
 
@@ -94,24 +109,50 @@ export default class Createfeedback extends Component {
                 button: "Okay!"
             })
             .then((value) => {
-                swal(window.location = '#');
+                swal(window.location = 'components/client/home/contactus/rate');
             });
-    }
+    }}
+
+     //demo button method
+     demo =() => { 
+    
+        //setState
+        this.setState ({
+            Username: "Jone Williyem"
+        })
+    
+        this.setState ({
+            Phone: "0751231234"
+        })  
+    
+        this.setState ({
+            Email: "jone@gmail.com"
+        })
+    
+        this.setState ({
+            date: ""
+        })
+    
+        this.setState ({
+            feedbackMsg: "service is greate"
+        })
+      }
+
     
 
     render() {
         return ( 
-            <div>
+            <div style={{backgroundColor:"#c2dadd"}}>
             <div class="row">
             <div class="col-6">
-            <br/><br/><br/><br/>
+             &nbsp;&nbsp;&nbsp;&nbsp;
             <img src="https://tlt.cofc.edu/files/2019/08/1_UbeT74oIf3JlX1YRu90EKA-1080x675.jpeg " width="100%" height="90% "/>
             </div>
 
          
 
        <div class="col-6">
-       <br/><br/><br/><br/>
+       <br/><br/>
        <div className="cardf" style={{width: "85%"}}>
           <div className="card-body">
             <div className="col-md-8 mt-4 mx-auto">
@@ -125,7 +166,7 @@ export default class Createfeedback extends Component {
                     value = { this.state.Username }
                     placeholder="Enter Your Name"
                     onChange = { this.onChangeUsername }/> 
-       </div > 
+            </div > 
             
             
         <div className = "form-group" style={{ marginBottom: '15px' }}>
@@ -148,12 +189,12 @@ export default class Createfeedback extends Component {
                    onChange = { this.onChangeEmail }/>
         </div >
 
-            <div className = "form-group" >
+        <div className = "form-group" >
             <label > Date: </label> 
                <div >
                 <DatePicker selected = { this.state.date }
                 onChange = { this.onChangedate}/> 
-           </div >
+        </div >
 
             <br >
             </br>
@@ -166,15 +207,15 @@ export default class Createfeedback extends Component {
                    placeholder="Enter Feedback comment here.."
                    onChange = { this.onChangefeedbackMsg }/> 
             </div >
-
-
             </div>
+
             <br >
             </br>
 
             <label style={{ marginBottom: '5px' }} className="topic">Thank you! for your feedback </label>
 
-
+            <Button variant="primary" onClick={this.demo}>Demo</Button>
+            <br ></br> <br ></br>
 
             <div className = "form-group" >
             <input type = "submit"
