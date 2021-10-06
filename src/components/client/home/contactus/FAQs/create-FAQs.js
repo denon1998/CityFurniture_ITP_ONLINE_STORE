@@ -134,7 +134,7 @@ export default class CreateFAQs extends Component {
                 button: "Okay!"
             })
             .then((value) => {
-                swal(window.location = '#');
+                swal(window.location = '');
             });
     }}
 
@@ -163,7 +163,7 @@ export default class CreateFAQs extends Component {
         })
     
         this.setState ({
-            orderNo: "chamidU123"
+            orderNo: "123"
         })
     
         this.setState ({
@@ -310,18 +310,14 @@ export default class CreateFAQs extends Component {
             </div >
 
             <div className = "form-group" >
-            <label >  Category: 
-            <select>
-            <option selected value="coconut">choose your FAQ category here</option>
-            <option value="mango">About Payment Section</option>
-            <option value="mango">Error with Login </option>
-            <option value="mango">About Products management</option>
-            <option value="mango">Error with shipping cart</option>
-            <option value="mango">About delivery management</option>
-           </select> 
-           <br ></br>
-           </label>  
+            <label > Category: </label> 
+            <input type = "text" 
+                   required className = "form-control" 
+                   value = { this.state.category }
+                   placeholder="Enter here which category"
+                   onChange = { this.onChangecategory}/>
             </div > 
+         
 
             <br >
             </br>
