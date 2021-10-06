@@ -25,7 +25,6 @@ import CreateOrderPost from './components/client/home/odermgt/CreateOrderPost';
 import CustomizedOrder from './components/client/home/odermgt/CustomizedOrder';
 import Cart from './components/client/home/cart/Cart';
 
-import HomeClientProduct from './components/client/home/products/HomeClientProduct';
 
  // Kithmini 
 import Createfeedback from "./components/client/home/contactus/feedback/create-feedback";
