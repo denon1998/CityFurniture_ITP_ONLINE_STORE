@@ -13,7 +13,10 @@ import cuslog from "./components/cuslog.component";
 import Home from './components/client/home/pages/Home';
 import Products from './components/client/home/pages/Products';
 import Offers from './components/client/home/pages/Offers';
-import SignUp from './components/client/home/pages/SignUp';
+import OfficeFurniture from './components/client/home/pages/OfficeFurniture';
+
+import HomeClientProduct from './components/client/home/products/HomeClientProduct';
+import officeHome from './components/client/home/officeFurniture/officeHome';
 
 
 import { CartProvider } from "react-use-cart";
@@ -22,7 +25,6 @@ import CreateOrderPost from './components/client/home/odermgt/CreateOrderPost';
 import CustomizedOrder from './components/client/home/odermgt/CustomizedOrder';
 import Cart from './components/client/home/cart/Cart';
  
-import HomeClientProduct from './components/client/home/products/HomeClientProduct';
 
 import Createfeedback from "./components/client/home/contactus/feedback/create-feedback";
 import Createcontact from "./components/client/home/contactus/contact/create-contact";
@@ -73,12 +75,14 @@ function App() {
                 <Route path='/home' exact component={Home} />
                 <Route path='/products' exact component={Products} />
                 <Route path='/offers' exact component={Offers} />
-                <Route path='/SignUp' exact component={SignUp} />
+                <Route path='/officeFurniture' exact component={OfficeFurniture} />
+
+                <Route path="/products" exact component={HomeClientProduct}></Route>
+                <Route path="/officeFurniture" exact component={officeHome}></Route>
 
 
 
                 <Route path="/cart" exact component={Cart}></Route>
-                <Route path="/products" exact component={HomeClientProduct}></Route>
                 <Route path="/customized" exact component={CustomizedOrder}></Route>
                 <Route path="/order/add" exact component={CreateOrderPost}></Route>
 
