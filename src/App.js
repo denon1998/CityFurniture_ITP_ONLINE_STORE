@@ -21,14 +21,19 @@ import { CartProvider } from "react-use-cart";
 import CreateOrderPost from './components/client/home/odermgt/CreateOrderPost';
 import CustomizedOrder from './components/client/home/odermgt/CustomizedOrder';
 import Cart from './components/client/home/cart/Cart';
- 
+
 import HomeClientProduct from './components/client/home/products/HomeClientProduct';
 
+ // Kithmini 
 import Createfeedback from "./components/client/home/contactus/feedback/create-feedback";
 import Createcontact from "./components/client/home/contactus/contact/create-contact";
 import CreateFAQs from "./components/client/home/contactus/FAQs/create-FAQs";
 import Createsuggestion from "./components/client/home/contactus/suggestion/create-suggestion";
-  
+//import Rating from './components/client/home/contactus/rate/Ratings';
+
+//import Footer from './components/client/home/Footer';
+
+
 import EditPosts from './components/client/home/payment/AdminClientUpdateCard';
 import payHome from './components/client/home/payment/payHomeClient';
 import NavBar from './components/client/home/payment/AdminNavbar';
@@ -78,13 +83,13 @@ function App() {
                 <Route path="/customized" exact component={CustomizedOrder}></Route>
                 <Route path="/order/add" exact component={CreateOrderPost}></Route>
 
-                
-                <Route path="/feedback/create" component={Createfeedback} />
+               
+                <Route path = "/feedback/create" component={Createfeedback} />
                 <Route path = "/contact/create" component = { Createcontact }/>
                 <Route path = "/FAQs/create" component = { CreateFAQs }/>
                 <Route path = "/suggestion/create" component = { Createsuggestion }/>
-      
-
+                  
+        
 
 
 

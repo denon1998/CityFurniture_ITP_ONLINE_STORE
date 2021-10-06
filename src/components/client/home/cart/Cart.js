@@ -1,5 +1,9 @@
 import React from 'react';
 import { useCart } from 'react-use-cart';
+import shopping from '../images/shopping.png'
+import phone from '../images/phone.png'
+import './mystyle.css'
+import Footer from '../Footer';
 
 const Cart = () => {
     const {
@@ -20,8 +24,16 @@ const Cart = () => {
                 <div className="row justify-content-center">
                     <div className="col-12">
                         <h3 className="text">
-                            <h3 className="text-center">My Shopping Cart </h3></h3>
-                        <h5 className="text"> Product Types:  ({totalUniqueItems})Total Items: ({totalItems})</h5>
+                            <div className="text-center">
+                            <h2 className="text-center clientlet" >My Shopping Cart </h2>
+                            <img src="https://cdn.dribbble.com/users/146773/screenshots/4228811/dribble_cart.gif" style={{heigh:"15%", width:"15%"}} class="rounded-circle"/>
+                            
+                            </div>
+                            </h3>
+                            
+                     
+                        <h5 className="clientlet"> Product Types:  ({totalUniqueItems})Total Items: ({totalItems})</h5>
+                    
                         <table className="table table-light table-hover m-0">
                             <tbody>
                                 {items.map((item, index) => {
@@ -47,11 +59,16 @@ const Cart = () => {
                             </tbody>
                         </table>
                     </div>
+                    
                     <div className="col-auto ms-auto">
-                        <h2>Total Price: Rs.{cartTotal}</h2>
+                    <br/>
+                    <br/>
+                        <h2 className="clientlet">Total Price: Rs.{cartTotal}</h2>
                     </div>
                     <br />
                     <div className="col-auto">
+                    <br/>
+                    <br/>
                         <button className="btn btn-danger m-2"
                             onClick={() => emptyCart()}>Clear Cart</button>
                         <br />
@@ -59,18 +76,23 @@ const Cart = () => {
                     </div>
                 </div>
             </section>
+            <br/>
+            <br/>
+            <br/>
             <div class="ibox">
-                <div class="ibox-title text-center">
-                    <h5>Support</h5>
+                <div class="ibox-title text-center ">
+                <img src={phone} />
+                    <h5 className="clientlet">Support</h5>
                 </div>
                 <div class="ibox-content text-center">
-                    <h3><i class="fa fa-phone"></i> +94 100 783 001</h3>
-                    <span class="small">
+                    <h3  className= "clientlet"><i class="fa fa-phone"></i> +94 100 783 001</h3>
+                    <span class="small clientlet">
                         Please contact with us if you have any questions. We are avalible 24h.
                     </span>
                 </div>
             </div>
 
+            <Footer />
 
         </div>
     );

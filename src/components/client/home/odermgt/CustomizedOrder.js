@@ -6,6 +6,11 @@ import shop from '../images/shop.jpg';
 import newchair from '../images/newchair.jpg';
 import workshop from '../images/workshop.jpg';
 import fabricss from '../images/fabricss.jpg';
+import map from '../images/map.png'
+import working from '../images/working.jpg'
+import cut from '../images/cut.jpeg';
+import Footer from '../Footer';
+
 
 
 
@@ -18,11 +23,11 @@ const CustomizedOrder = (props) => {
   return (
     <div className="container-sm">
 
-      <h2 className="text-center topic"><b>Customized Your Design</b></h2>
+      <h2 className="text-center "><b>Customized Your Design</b></h2>
       <br />
-      <h4 className="text-center" >
-        <p className="textdesign1">
-          <p className="text-danger">
+      <h4 className="text-center " >
+        <p className="fstyle">
+          <p className="text-danger ">
             <b>Looking for a Unique designs ? </b>Or make your <b>Dream furniture </b>from our talented, well-experienced experts.
           </p></p></h4>
       <h3 className="text-center">
@@ -72,25 +77,34 @@ const CustomizedOrder = (props) => {
       <h3 className="text-center">
         Fabrics</h3>
         <div className="card-group">
-        <div className="card">
+        <div className="myformstyle">
         <div class="clearfix">
-  <img src= {fabricss} class="col-md-6 float-md-end mb-3 ms-md-3" alt="..."/>
+        <div class="row">
+          <div class="col-6">
+  
 <br/>
 <br/>
   <p>
-   We have wide range of fabrics with different colors, and fabric types. <b>All are 100% good quality, durable and classy.</b>
+      We have wide range of fabrics with different colors, and fabric types. <b>All are 100% good quality, durable and classy.</b>
   </p>
  
   <p>
-  You can customize the product with any fabric you wish. Price may change according to the resource you choose
+      You can customize the product with any fabric you wish. Price may change according to the resource you choose
   </p>
 
   <p>
-   We have provided cleaning fabrics facilities for our customers. You can customize a new set of covers for bought product. <b>Maximum 7 weeking days to complete the order.</b>
+    We have provided cleaning fabrics facilities for our customers. You can customize a new set of covers for bought product. <b>Maximum 7 weeking days to complete the order.</b>
     
   </p>
   <br/>
-  <h5 className="text-center"><b><a href="#">Contact us for more Details.</a></b></h5>
+  <h5 className="text-center "><b><a href="#">Contact us for more Details.</a></b></h5>
+  </div>
+  <div class="col-6">
+      <img src= {fabricss} style={{width:"100%", height:"101%"}}/>
+
+    </div>
+
+  </div>
 
 </div>
 </div>
@@ -101,49 +115,45 @@ const CustomizedOrder = (props) => {
       <br />
 
       <h3 className="text-center">About our Service</h3>
-      <div className="container border" style={{marginTop: "50px", width:'90%'}}>
-      <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
-        <div className="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src={shop} className="d-block w-100" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>City Furniture Store</h5>
-              <p className="textdesign1">City Furniture. A greate unique icon in Furniture.... Kaduwela, SriLanka.... </p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src={newchair} className="d-block w-100" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Luxury, unique Designing</h5>
-              <p className="textdesign1">Our unique, luxury designs make City Furniture a quality brand.....</p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src={workshop} className="d-block w-100" alt="AAAA" />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>City Furniture Work-shop</h5>
-              <p className="textdesign1">We have around 40 human resources which are experts in making furniture... Moratuwa, SriLanka.....</p>
-            </div>
-          </div>
-        </div>
-        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
-        </button>
-      </div>
-      </div>
+      
     <br/>
     <br/>
+<div className="container border" style={{ width:"70%", height:"70%"}} >
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src={cut} alt="First slide"/>
     </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src={working} alt="Second slide"/>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://i.pinimg.com/originals/6c/9e/19/6c9e197129299c5af04d8ad1173ad9b9.gif" alt="Third slide"/>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+    {/* <img src={map} style={{width:"100%", height:"30%"}}/>
+
+    <br/>
+    <br/> */}
+     <br/>
+    <br/>
+    <Footer />
+
+    </div>
+    
+
+  
 
   )
 
