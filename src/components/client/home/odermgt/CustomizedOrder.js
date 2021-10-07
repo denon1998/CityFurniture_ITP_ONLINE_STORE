@@ -21,17 +21,17 @@ import Footer from '../Footer';
 
 const CustomizedOrder = (props) => {
   return (
-    <div className="container-sm">
+    <div>
 
-      <h2 className="text-center "><b>Customized Your Design</b></h2>
+      <h1 className="text-center"><b>Customized Your Design</b></h1>
       <br />
       <h4 className="text-center " >
-        <p className="fstyle">
+      
           <p className="text-danger ">
             <b>Looking for a Unique designs ? </b>Or make your <b>Dream furniture </b>from our talented, well-experienced experts.
-          </p></p></h4>
-      <h3 className="text-center">
-        Materials</h3>
+          </p></h4>
+      <h3 className="text-center"><b>
+        Materials</b></h3>
   
       <div className="card-group">
         <div className="card">
@@ -74,8 +74,8 @@ const CustomizedOrder = (props) => {
       <br />
       <br />
       <br />
-      <h3 className="text-center">
-        Fabrics</h3>
+      <h3 className="text-center"><b>
+        Fabrics</b></h3>
         <div className="card-group">
         <div className="myformstyle">
         <div class="clearfix">
@@ -114,15 +114,17 @@ const CustomizedOrder = (props) => {
       <br />
       <br />
 
-      <h3 className="text-center">About our Service</h3>
+      <h3 className="text-center"><b>About our Service</b></h3>
       
     <br/>
-    <br/>
-<div className="container border" style={{ width:"70%", height:"70%"}} >
+  
+    <div class="alert alert-danger text-center" role="alert">:) We will deliver our products with in 7 days. We will design your customized product within a months :) </div>
+   
+<div className="container border" style={{ width:"80%", height:"80%"}} >
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src={cut} alt="First slide"/>
+      <img class="d-block w-100" src="https://i.pinimg.com/originals/93/c7/44/93c744bcde1780c94bb1d3f03991f8a7.gif" alt="First slide"/>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src={working} alt="Second slide"/>
@@ -140,15 +142,15 @@ const CustomizedOrder = (props) => {
     <span class="sr-only">Next</span>
   </a>
 </div>
+
 </div>
 
-    {/* <img src={map} style={{width:"100%", height:"30%"}}/>
 
-    <br/>
-    <br/> */}
+
+   
      <br/>
     <br/>
-    <Footer />
+ 
 
     </div>
     

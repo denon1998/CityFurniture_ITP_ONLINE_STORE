@@ -19,6 +19,8 @@ import Home from './components/client/home/pages/Home';
 import Products from './components/client/home/pages/Products';
 import Offers from './components/client/home/pages/Offers';
 import SignUp from './components/client/home/pages/SignUp';
+import Footer from './components/client/home/Footer';
+
 
 
 import { CartProvider } from "react-use-cart";
@@ -55,9 +57,10 @@ function App() {
     return (<
         Router >
         <CartProvider>
+        <Navbar />
             <
                 div className="container" >
-                <Navbar />
+              
                 <br />
                 <
                     Route path="/admin"
@@ -128,6 +131,7 @@ function App() {
 
             </
             div >
+            <Footer />
         </CartProvider>
     </Router>
     );
