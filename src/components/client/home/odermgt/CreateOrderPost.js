@@ -4,6 +4,7 @@ import swal from 'sweetalert';
 import chair from "../images/chair.jpg";
 import banner from "../images/b1.gif"
 import Footer from '../Footer';
+import '../../../myformStyle.css'
 
 
 
@@ -178,11 +179,11 @@ export default class CreateOrderPost extends Component {
 
 <div className="card-body">
   <div className="col-md-8 mt-4 mx-auto">
-    <h1 className="text-center topic">Order Detail Form </h1>
+    <h1 className="text-center newlet"><b>Order Detail Form</b> </h1>
 
     <form className="needs-validation" align="center" style={{ width: "100%" }} >
       <div className="form-group" style={{ marginBottom: '15px' }}>
-        <label style={{ marginBottom: '5px' }} className="topic">Customer Name: </label>
+        <label style={{ marginBottom: '5px' }} className="topic"><b>Customer Name: </b></label>
         <input type="text"
           id="validationTooltip01"
           className="form-control"
@@ -195,7 +196,7 @@ export default class CreateOrderPost extends Component {
       </div>
 
 
-      <label style={{ marginBottom: '5px' }} className="topic">Address: </label>
+      <label style={{ marginBottom: '5px' }} className="topic"><b>Address: </b></label>
       <div class="row">
         <div class="col">
           <input type="number"
@@ -227,7 +228,7 @@ export default class CreateOrderPost extends Component {
       </div>
 
       <div className="form-group" style={{ marginBottom: '15px' }}>
-        <label style={{ marginBottom: '5px' }} className="topic">Contact No: </label>
+        <label style={{ marginBottom: '5px' }} className="topic"><b>Contact No: </b></label>
         <input type="text"
           className="form-control"
           name="contactNo"
@@ -238,7 +239,7 @@ export default class CreateOrderPost extends Component {
 
 
       <div className="form-group" style={{ marginBottom: '15px' }}>
-        <label style={{ marginBottom: '5px' }} className="topic">Order Date</label>
+        <label style={{ marginBottom: '5px' }} className="topic"><b>Order Date</b></label>
         <input type="date"
           className="form-control"
           name="orderDate"
@@ -247,9 +248,9 @@ export default class CreateOrderPost extends Component {
           onChange={this.handleInputChange} />
       </div>
 
-      <label style={{ marginBottom: '5px' }} className="topic">Order Status: Pending</label>
+      <label style={{ marginBottom: '5px' }} className="topic"><b>Order Status: Pending</b></label>
       <br />
-      <label style={{ marginBottom: '5px' }} className="topic">Order Total: {this.state.cartTotal}</label>
+      <label style={{ marginBottom: '5px' }} className="topic"><b>Order Total: {this.state.cartTotal}</b></label>
       <br />
 
       <button type="button" class="btn btn-outline-dark btn-sm" onClick={this.demo} > Demo </button>
@@ -260,7 +261,7 @@ export default class CreateOrderPost extends Component {
       </button>
     
       <br/>
-      <button className="btn btn-dark" type="submit" style={{ marginTop: '15px' }} ><a href="/payHome"> <i className="far fa-check-square" style={{ textDecoration:"none"}}></i>
+      <button className="btn btn-dark" type="submit" style={{ marginTop: '15px' }} ><a href="/payHome" style={{  textDecoration: 'none', color: 'white' }}> <i className="far fa-check-square" ></i>
         &nbsp; Continue with payment</a></button>
 
     </form>
@@ -284,7 +285,7 @@ export default class CreateOrderPost extends Component {
   </div>
   <br/>
   <br/>
-  <Footer />
+ 
 
   
       </div>

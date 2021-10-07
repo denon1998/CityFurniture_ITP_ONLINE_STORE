@@ -13,6 +13,10 @@ import cuslog from "./components/cuslog.component";
 import Home from './components/client/home/pages/Home';
 import Products from './components/client/home/pages/Products';
 import Offers from './components/client/home/pages/Offers';
+
+import SignUp from './components/client/home/pages/SignUp';
+import Footer from './components/client/home/Footer';
+
 import OfficeFurniture from './components/client/home/pages/OfficeFurniture';
 import Footer from './components/client/home/Footer';
 
@@ -54,8 +58,11 @@ function App() {
         <CartProvider>
         <Navbar />
             <
-                div className="" >
-                
+
+                div className="container" >
+              
+
+
                 <br />
                 <
                     Route path="/"
@@ -109,7 +116,9 @@ function App() {
 
             </
             div >
-            <footer />
+
+            <Footer />
+
         </CartProvider>
     </Router>
     );
