@@ -5,10 +5,13 @@ import './HomeClientProducts.css';
 
 const HomeClientProduct = () => {
     console.warn(data.productData)
-
     return (
+        
+
         <div>
+            <br></br> <br></br>
             <h1 className="text-center mt-3">Home Furniture</h1>
+            <br></br>
                 <section className="py-4 container">
                     <div className="row justify-content-center">
                         {data.productData.map((item, index) => {
@@ -16,11 +19,11 @@ const HomeClientProduct = () => {
                                 <ItemCard id={item.id} priceNumber={item.priceNumber} itemTotal={item.price} img={item.img} Product={item.Product} Description={item.Description} price={item.price} ModelNumber={item.ModelNumber} ItemLength={item.ItemLength} ItemHeight={item.ItemHeight} ItemWidth={item.ItemWidth} Materials={item.Materials} Colours={item.Colours} Components={item.Components} StockAvailability={item.StockAvailability} key={index}/>
                             )
                         })}
-                        
+                       
                     </div>
             </section> 
-        </div>      
+        </div>           
     );
-  };
-  
+  };    
+ 
   export default HomeClientProduct;

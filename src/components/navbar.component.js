@@ -7,21 +7,11 @@ export default class Navbar extends Component {
         return (<
             nav className="navbar navbar-dark bg-dark navbar-expand-lg" >
             <
-                Link to="/admindashboard"
+                Link to="/home"
                 className="navbar-brand" ><font face="Comic sans MS" size="4"> City Furniture </font></Link> <
                     div className="collpase navbar-collapse" >
                 <
                     ul className="navbar-nav mr-auto" >
-
-
-                    <
-                        li className="navbar-item" >
-                        <
-                            Link to="/"
-                            className="nav-link" > Customer login </Link> </
-                    li >
-
-  
 
                     
                     <
@@ -30,23 +20,21 @@ export default class Navbar extends Component {
                             Link to="/home"
                             className="nav-link" > Home </Link> </
                     li >
-                    <
-                        li className="navbar-item" >
-                        <
-                            Link to="/customized"
-                            className="nav-link" > Customized </Link> </
-                    li >
-
-
 
                     <
                     li className="navbar-item" >
                     <
                         Link to="/products"
                         className="nav-link" > Products </Link> </
-                li >
+                    li >
+                 
 
-
+                    <
+                        li className="navbar-item" >
+                        <
+                            Link to="/customized"
+                            className="nav-link" > Customized </Link> </
+                    li >                        
 
                     <
                         li className="navbar-item" >
@@ -62,8 +50,29 @@ export default class Navbar extends Component {
                             className="nav-link" > Shopping Cart </Link> </
                     li >
 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <
+                    li className="navbar-item" >
+                    <
+                        Link to="/"
+                        className="nav-link" > Sign Out </Link> </
+                    li >
+
+
                 </ul >
             </div > </nav>
         );
+       
     }
+    
 }

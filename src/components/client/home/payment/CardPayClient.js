@@ -1,5 +1,5 @@
 import { text } from 'body-parser';
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import './style/CardPay.css'
@@ -10,210 +10,229 @@ import { useHistory } from "react-router-dom";
 import swal from 'sweetalert';
 
 
-function CardPayClient() {
-    let history = useHistory();
-
-    const [cardnumber, setNumber] = useState('')
-    const [customerName, setName] = useState('')
-    const [expiry, setExpiry] = useState('')
-    const [cvc, setCvc] = useState('')
-    const [focus, setFocus] = useState('')
-
-    const [error1, setError1] = useState('')
-    const [error2, setError2] = useState('/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/')
-    const [error3, setError3] = useState('')
-    const [error4, setError4] = useState('')
-    
-    
-
-    const name = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/;
-    const con =/^[0-9\b]+$/;
-
-    
-
-    //validation start here
-    useEffect(() => {
-        if (cardnumber.length != 16  && cardnumber != null) {
-            setError1("Card number should be 16 numbers only!");
-        } else {
-            setError1("valid");
-        }
-
-        if(!name.test(String(customerName)))
-        {
-            setError2("Invalid Customer Name");
-        }
-        else{
-            setError2("valid");
-        }
-
-        if (expiry.length != 5 && expiry != String  ) {
-            setError3("Please Enter date given format");
-        } else {
-            setError3("valid");
-        }
-
-        if (cvc.length != 4  && cardnumber != null ) {
-            setError4("Please enter 4 numbers for your CVC");
-        } else {
-            setError4("valid");
-        }
-
-       
+class CardPayClient extends Component {
 
 
-    });
-
-
-
-    const handleclick = () => {
-        if ((error1 == "Please enter numbers only") ||  (error3 == "Please Enter correct date") || (error4 == "Please enter 4 numbers for your CVC")) {
-            alert("Invalid Details. Please re Check");
-        } else {
-
-
-
-            axios({
-                method: 'post',
-                url: 'https://furniture-store-backend.herokuapp.com/api/cardpost/save',
-                data: {
-                    cardnumber: cardnumber,
-                    customerName: customerName,
-                    expiry: expiry,
-                    cvc: cvc,
-
-                }
-
-
-            });
-            swal("Good job!", "Your data was submitted", "success");
-            
-            history.push('/success');
+    constructor(props) {
+        super(props);
+        this.state = {
+            cardnumber: '',
+            customerName: '',
+            expiry: '',
+            cvc: '',
+            focus: '',
 
         }
     }
 
+    handleInputFocus = (e) => {
+        this.setState({ focus: e.target.name });
+    }
+
+    handleInputChange = (e) => {
+        const { name, value } = e.target;
+
+        this.setState({
+            ...this.state,
+            [name]: value
+        })
+
+    }
+
+    onSubmit = (e) => {
+
+        e.preventDefault();
 
 
-    return (
+        const { cardnumber, customerName, expiry, cvc } = this.state;
 
-        <div className='container' align="center" >
+        const data = {
+            cardnumber: cardnumber,
+            customerName: customerName,
+            expiry: expiry,
+            cvc: cvc,
 
-            <br />
-            <br></br>
-            <h1>PAY NOW </h1>
-            <br />
-            <br />
-            <Cards
 
-                number={cardnumber}
-                name={customerName}
-                xpiry={expiry}
-                cvc={cvc}
-                focused={focus}
+        }
 
-            />
+        console.log(data)
 
-            <form style={{ width: "40%" }}>
-                <br />
-                <br />
-                <input
-                    class="form-control"
-                    type='tel'
-                    name='cardnumber'
-                    placeholder="Card Number"
-                    value={cardnumber}
-                    //required
-                    onChange={e => setNumber(
-                        e.target.value
-                    )}
-                    onFocus={e => setFocus(
-                        e.target.name
-                    )}
-                />
+        //validation start here
+        const name = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/;
+        const card = /^[0-9\b]+$/;
 
-                {error1 == "valid"
-                    ? <div id="emailHelp" class="form-text" style={{ color: "blue" }}><b>{error1}</b></div>
-                    : <div id="emailHelp" class="form-text" style={{ color: "red" }}><b>{error1}</b></div>
+        if (cardnumber.length === 0 || customerName.length === 0 || expiry.length === 0 || cvc.length === 0) {
+            swal("Fields can not be empty!", "Please fill all the information!", "error");
+
+        } else if ((!card.test(Number(cardnumber)))) {
+            swal("Invalid Card Number", "Card Number cannot contain any Characters!", "error");
+
+        }
+        else if ((!name.test(String(customerName)))) {
+            swal("Invalid Customer Name", "Customer name cannot contain any Numbers!", "error");
+
+        }
+        else if (cardnumber.length > 16) {
+            swal("Invalid Card Number!", "Do not enter more than 16 Numbers!", "error");
+        }
+
+        else if (cardnumber.length < 16) {
+            swal("Invalid Card Number!", "Do not enter less than 16 Numbers!", "error");
+        }
+
+
+        else if (customerName.length > 20) {
+            swal("Invalid Customer Name!", "Do not enter more than 20 letters!", "error");
+        }
+
+        else if (customerName.length < 3) {
+            swal("Invalid Customer Name!", "Please check your name again!", "error");
+        }
+
+        else if (expiry.length > 5) {
+            swal("Invalid  Date!", "Please followed the below format!", "error");
+        }
+        else if (expiry.length < 5) {
+            swal("Invalid  Date!", "please followed the below format!", "error");
+        }
+        else if ((!card.test(Number(cvc)))) {
+            swal("Invalid CVC Number", "CVC cannot contain any Characters!", "error");
+
+        }
+
+        else if (cvc.length < 3) {
+            swal("Invalid CVC Number", "CVC should contain 3 numbers only!", "error");
+        }
+        else if (cvc.length > 3) {
+            swal("Invalid CVC Number", "CVC should contain 3 numbers only!", "error");
+        }
+
+
+        else {
+
+
+            axios.post('https://furniture-store-backend.herokuapp.com/api/cardpost/save', data).then((res) => {
+
+                if (res.data.success) {
+
+                    swal("payment successfully added!");
+                    this.props.history.push('/success');
+
+                    this.setState(
+                        {
+                            cardnumber: "",
+                            customerName: "",
+                            expiry: "",
+                            cvc: "",
+
+                        }
+                    )
                 }
+            })
+        }
+    }
+
+    //method of demo button
+    demo = () => {
+        //setState
+
+        this.setState({
+            ...this.state,
+            cardnumber: "3452632596325842",
+            customerName: "Imesh Roshan",
+            expiry: "03/26",
+            cvc: "852",
+
+        })
+    }
+
+
+
+
+    render() {
+        return (
+            <div className='container' align="center" >
 
                 <br />
-                <br />
+                <Cards
+                    number={this.state.cardnumber}
+                    name={this.state.customerName}
+                    expiry={this.state.expiry}
+                    cvc={this.state.cvc}
+                    focused={this.state.focus}
 
-                <input
-                    class="form-control"
-                    name='customerName'
-                    type='text'
-                    placeholder="Cash holder name"
-                    value={customerName}
-                    required
-                    onChange={e => setName(
-                        e.target.value
-                    )}
-                    onFocus={e => setFocus(
-                        e.target.name
-                    )}
                 />
-               {error2 == "valid"
-                    ? <div id="emailHelp" class="form-text" style={{ color: "blue" }}><b>{error2}</b></div>
-                    : <div id="emailHelp" class="form-text" style={{ color: "red" }}><b>{error2}</b></div>
-                }
+                <br />
+                <h2><b>PAY NOW</b></h2>
 
                 <br />
-                <br />
+                <form style={{ width: "35%" }}>
+                    <input
+                        class="form-control"
+                        type="tel"
+                        name="cardnumber"
+                        placeholder="Card Number"
+                        value={this.state.cardnumber}
+                        required
+                        onChange={this.handleInputChange}
+                        onFocus={this.handleInputFocus}
+                    />
 
-                <input
-                    class="form-control"
-                    type='text'
-                    name='expiry'
-                    required
-                    placeholder="MM/YY Expiry"
-                    value={expiry}
-                    onChange={e => setExpiry(
-                        e.target.value
-                    )}
-                    onFocus={e => setFocus(
-                        e.target.name
-                    )}
-                />
+                    <br />
+                    <input
+                        class="form-control"
+                        type="text"
+                        name="customerName"
+                        placeholder="Customer Name"
+                        value={this.state.customerName}
+                        required
+                        onChange={this.handleInputChange}
+                        onFocus={this.handleInputFocus}
+                    />
 
-                {error3 == "valid"
-                    ? <div id="emailHelp" class="form-text" style={{ color: "blue" }}><b>{error3}</b></div>
-                    : <div id="emailHelp" class="form-text" style={{ color: "red" }}><b>{error3}</b></div>
-                }
-                <br />
-                <br />
+                    <br />
+                    <input
+                        class="form-control"
+                        type="text"
+                        name="expiry"
+                        placeholder="MM/YY"
+                        value={this.state.expiry}
+                        required
+                        onChange={this.handleInputChange}
+                        onFocus={this.handleInputFocus}
+                    />
 
-                <input
-                    class="form-control"
-                    type='tel'
-                    name='cvc'
-                    required
-                    placeholder="CVC"
-                    value={cvc}
-                    onChange={e => setCvc(
-                        e.target.value
-                    )}
-                    onFocus={e => setFocus(
-                        e.target.name
-                    )}
-                />
-                {error4 == "valid"
-                    ? <div id="emailHelp" class="form-text" style={{ color: "blue" }}><b>{error4}</b></div>
-                    : <div id="emailHelp" class="form-text" style={{ color: "red" }}><b>{error4}</b></div>
-                }
-                <br />
-                <br />
+                    <br />
+                    <input
+                        class="form-control"
+                        type="tel"
+                        name="cvc"
+                        placeholder="cvc"
+                        value={this.state.cvc}
+                        required
+                        onChange={this.handleInputChange}
+                        onFocus={this.handleInputFocus}
+                    />
 
+                    <br />
+                    <button className="btn btn-outline-primary" type="submit" style={{ marginTop: '15px' }} onClick={this.onSubmit}>
+                        <i className="far fa-check-square"></i>
+                        &nbsp; PROCEED
+                    </button>
 
+                </form>
 
-                <button onClick={handleclick} class="btn btn-success btn-lg">PROCEED</button>
-
-            </form>
-        </div>
-
-    );
-
+                <button className="btn btn-outline-primary" style={{ marginTop: '15px' }} onClick={(e) => {
+                    this.setState({
+                        ...this.state,
+                        cardnumber: "3452632596325842",
+                        customerName: "Imesh Roshan",
+                        expiry: "03/26",
+                        cvc: "852",
+                    })
+                }}>Demo</button>
+            </div>
+        );
+    }
 }
-
 export default CardPayClient;

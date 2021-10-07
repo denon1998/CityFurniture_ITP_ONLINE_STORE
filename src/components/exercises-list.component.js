@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Button } from 'react-bootstrap';
-
+import jsPdf from 'jspdf'
+import 'jspdf-autotable'
 
 const Customer = props => ( <
     tr >
@@ -16,7 +17,7 @@ const Customer = props => ( <
     td > { props.exercise.password } </td> <
     td >
     <
-    Link to = { "/edit/" + props.exercise._id } > Edit </Link> | <a href=" " onClick={() => { props.deleteExercise(props.exercise._id) }}>Delete</a > </
+    Link to = { "/csedit/" + props.exercise._id } > Edit </Link> | <a href=" " onClick={() => { props.deleteExercise(props.exercise._id) }}>Delete</a > </
     td > </tr> 
 )
 
@@ -33,7 +34,7 @@ export default class ExercisesList extends Component {
 
 
     componentDidMount() {
-        axios.get('https://furniture-store-backend.herokuapp.com/api0/exercises/')
+        axios.get('https://furniture-store-backend.herokuapp.com/api/exercises/')
             .then(response => {
                 this.setState({ exercises: response.data })
             })
@@ -43,7 +44,7 @@ export default class ExercisesList extends Component {
     }
 
     getPosts() {
-        axios.get('https://furniture-store-backend.herokuapp.com/api0/exercises/')
+        axios.get('https://furniture-store-backend.herokuapp.com/api/exercises/')
             .then(response => {
                 this.setState({ exercises: response.data })
             })
@@ -51,10 +52,9 @@ export default class ExercisesList extends Component {
                 console.log(error);
             })
     }
-
     deleteExercise(id) {
         if (window.confirm('Are you sure?')) {
-            axios.delete('https://furniture-store-backend.herokuapp.com/api0/exercises/' + id)
+            axios.delete('https://furniture-store-backend.herokuapp.com/api/exercises/' + id)
                 .then(response => { console.log(response.data) });
 
             this.setState({
@@ -89,8 +89,7 @@ export default class ExercisesList extends Component {
 
         const searchKey = e.currentTarget.value;
 
-        axios.get('https://furniture-store-backend.herokuapp.com/api0/exercises/').then(response => {
-
+        axios.get('https://furniture-store-backend.herokuapp.com/api/exercises/').then(response => {
 
             const resultt = response.data
             const result = resultt.filter((props) =>
@@ -103,31 +102,51 @@ export default class ExercisesList extends Component {
 
     }
 
+      //pdf generating
+      jsPdfGenerator = () => {
+
+        //new document in jspdf
+        var doc = new jsPdf('p','pt');
+
+        doc.text(210,30,"Details of Customers")
+        doc.autoTable({  html:'#my-pdf' })
+
+        doc.autoTable({
+          columnStyles: { europe: { halign: 'center' } }, 
+          margin: { top: 10 },
+        })
+
+        //save the pdf
+        doc.save("Details of Customers.pdf");
+      }
+    
     render() {
         return ( <
             div className = "container" >
-            
+            <br/>
             <div style = {
-                { float: 'none' }
-            } >
-            <Link to = "/main" > <Button variant = "primary" > Customer </Button> 
+                { float: 'none'}
+            } > 
+            <Link to = "/main" >  <button type="button" title="You are now on the customer list" 
+            class="btn btn-secondary" variant = "primary"> Customer </button>
             </Link >
-            <Link to = "/users/" > <Button variant = "primary" > User </Button> 
-            </Link >
-            </div>
-
+            
+            <Link to = "/users/" > <Button variant = "info" title="Swith to the list of users" > User </Button>
+            </Link > 
+            </div>  <br/>
+            
             <
             div className = "row" >
             <
             div className = "col-lg-9 mt-2 mb-2" >
             <
-            h4 > Customer List </h4> </
+            h4 > Details of all Customers </h4> </
             div > <
             div className = "col-lg-3 mt-2 mb-2" >
             <
             input className = "form-control"
             type = "search"
-            placeholder = "Search"
+            placeholder = "Search by Customer Name"
             name = "searchQuery"
             onChange = { this.handleSearchArea } >
             </
@@ -137,7 +156,7 @@ export default class ExercisesList extends Component {
 
 
             <
-            table className = "table" >
+            table class="table table-bordered table-white" id="my-pdf" >
             <
             thead className = "thead-light" >
             <
@@ -157,8 +176,7 @@ export default class ExercisesList extends Component {
                 this.state.exercises.map(props =>
                     <
                     tr key = { props.id } >
-                    <
-                    td > { props.username } </td> <
+                    <td > { props.username } </td>  <
                     td > { props.Address } </td>  <
                     td > { props.Phone } </td>  < 
                     td > { props.birthday.substring(0, 10) } </td>  < 
@@ -168,7 +186,9 @@ export default class ExercisesList extends Component {
 
                     td >
                     <
-                    Link to = { "/edit/" + props._id } > Edit </Link> | <a href="" onClick={() => { this.deleteExercise(props._id) }}>Delete</a > </
+                    Link to = { "/csedit/" + props._id } >  <Button variant = "warning btn-sm"> Edit </Button> </Link>  
+                    <a href="" onClick={() => { this.deleteExercise(props._id) }}> <Button variant = "danger btn-sm"> Delete </Button> </a > 
+                    </
                     td >
 
                     </tr>
@@ -178,7 +198,9 @@ export default class ExercisesList extends Component {
 
             </tbody> </
             table >
-
+            <button type="button" title="Report generation" class="btn btn-outline-primary btn-sm" 
+            onClick={this.jsPdfGenerator} > Download as a PDF </button>
+            
             <
             div style = {
                 { float: 'right' }
@@ -186,7 +208,7 @@ export default class ExercisesList extends Component {
 
             <
             Link to = "/create" >
-            <Button variant = "primary" > New Customer </Button> 
+            <button type="button" class="btn btn-success" variant = "primary" > New Customer </button>
             </
             Link >
             </div>
