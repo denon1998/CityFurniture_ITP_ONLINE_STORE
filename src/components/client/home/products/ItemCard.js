@@ -38,7 +38,8 @@ const ItemCard = (props) => {
 
                         window.location = '/cart'
                     }}> Add to Cart </button>
-                    &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;
+                    &nbsp;  &nbsp;  &nbsp; &nbsp; 
+                    <br></br> <br></br>
                     <button type="button" class="btn btn-primary">Buy Now</button>
 
                 </div>

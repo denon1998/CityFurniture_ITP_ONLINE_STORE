@@ -3,6 +3,9 @@ import axios from 'axios';
 import swal from 'sweetalert';
 import chair from "../images/chair.jpg";
 import banner from "../images/b1.gif"
+import Footer from '../Footer';
+import '../../../myformStyle.css'
+
 
 
 
@@ -64,8 +67,8 @@ export default class CreateOrderPost extends Component {
 
 
     }
-window.location='/payhome'
-    console.log(data)
+//window.location='/payhome'
+   // console.log(data)
 
 
     //validation
@@ -123,28 +126,64 @@ window.location='/payhome'
 
 
     }
+  }
+  demo =() => { 
 
-
+    //setState
+    this.setState ({
+      name :"Chanduni Nethmini"
+    })
+  
+    this.setState ({
+      postalNo:"259"
+    })
+  
+    this.setState ({
+      street:"Lake road"
+    }) 
+  
+    this.setState ({
+      town:"Colombo2"
+    })
+    this.setState({
+      contactNo:"0710000000"
+    }) 
+  
   }
 
   render() {
     return (
-      <div style={{width: "100%", height: "100%"}}>
-      <div class="row" style={{width: "100%"}}>
-    <div class="col-5" style={{height: "100vh"}}>
-    <img src={banner} style={{height: "100vh"}} />
+      <div>
+      <div class="row" >
+      <div class="col-5" >
+    <img src={"https://i.pinimg.com/originals/dd/f7/62/ddf7620b1a1af96d24f1413bb336f096.gif"} className="rounded-circle" style={{width:"130%", height:"70%", marginTop:"50px", marginRight:"30px"}} />
+
+    <section id="hire">
+            <div className="topic">
+              <div class="container-fluid">
+                <div class="Jumbotron jumbotron-fluid">
+                  <div className="container hire">
+                    <br/>
+                    <marquee direction="left"><p class="display-3 ">Thanks for choosing CITY FURNITURE</p></marquee>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
     </div>
-    <div class="col-7">
+    
+    <div class="col-5">
+      
       <div style={{marginTop: "2%"}}>
-      <div className="carddd" style={{ width: "80%" }}>
+      <div className="myformstyle" style={{ width: "120%", marginLeft:"90px"}}>
 
 <div className="card-body">
   <div className="col-md-8 mt-4 mx-auto">
-    <h1 className="text-center topic">Order Detail Form </h1>
+    <h1 className="text-center newlet"><b>Order Detail Form</b> </h1>
 
     <form className="needs-validation" align="center" style={{ width: "100%" }} >
       <div className="form-group" style={{ marginBottom: '15px' }}>
-        <label style={{ marginBottom: '5px' }} className="topic">Customer Name: </label>
+        <label style={{ marginBottom: '5px' }} className="topic"><b>Customer Name: </b></label>
         <input type="text"
           id="validationTooltip01"
           className="form-control"
@@ -157,7 +196,7 @@ window.location='/payhome'
       </div>
 
 
-      <label style={{ marginBottom: '5px' }} className="topic">Address: </label>
+      <label style={{ marginBottom: '5px' }} className="topic"><b>Address: </b></label>
       <div class="row">
         <div class="col">
           <input type="number"
@@ -189,7 +228,7 @@ window.location='/payhome'
       </div>
 
       <div className="form-group" style={{ marginBottom: '15px' }}>
-        <label style={{ marginBottom: '5px' }} className="topic">Contact No: </label>
+        <label style={{ marginBottom: '5px' }} className="topic"><b>Contact No: </b></label>
         <input type="text"
           className="form-control"
           name="contactNo"
@@ -200,7 +239,7 @@ window.location='/payhome'
 
 
       <div className="form-group" style={{ marginBottom: '15px' }}>
-        <label style={{ marginBottom: '5px' }} className="topic">Order Date</label>
+        <label style={{ marginBottom: '5px' }} className="topic"><b>Order Date</b></label>
         <input type="date"
           className="form-control"
           name="orderDate"
@@ -209,21 +248,25 @@ window.location='/payhome'
           onChange={this.handleInputChange} />
       </div>
 
-      <label style={{ marginBottom: '5px' }} className="topic">Order Status: Pending</label>
+      <label style={{ marginBottom: '5px' }} className="topic"><b>Order Status: Pending</b></label>
       <br />
-      <label style={{ marginBottom: '5px' }} className="topic">Order Total: {this.state.cartTotal}</label>
+      <label style={{ marginBottom: '5px' }} className="topic"><b>Order Total: {this.state.cartTotal}</b></label>
       <br />
 
-
+      <button type="button" class="btn btn-outline-dark btn-sm" onClick={this.demo} > Demo </button>
+      <br/>
       <button className="btn btn-dark" type="submit" style={{ marginTop: '15px' }} onClick={this.onSubmit}>
         <i className="far fa-check-square"></i>
-        &nbsp; Continue with Payment
+        &nbsp; Place the Order
       </button>
-      <br />
+    
+      <br/>
+      <button className="btn btn-dark" type="submit" style={{ marginTop: '15px' }} ><a href="/payHome" style={{  textDecoration: 'none', color: 'white' }}> <i className="far fa-check-square" ></i>
+        &nbsp; Continue with payment</a></button>
 
     </form>
 
-    
+   
 
   </div>
   
@@ -232,143 +275,19 @@ window.location='/payhome'
 
 </div>
 {this.state.name}
-          <section id="hire">
-            <div className="topic">
-              <div class="container-fluid">
-                <div class="Jumbotron jumbotron-fluid">
-                  <div className="container hire">
-                    <br/>
-                    <marquee direction="left"><p class="display-3 "><img src="http://gifgifs.com/animations/jobs-people/painters/Painting_the_fence.gif" style={{width: "15%"}} />Thanks for choosing CITY FURNITURE</p></marquee>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+         
       </div>
     </div>
+
+   
+
+  
   </div>
+  <br/>
+  <br/>
+ 
 
-        {/* <div className="container">
-          <div className="text-center topic">
-            <h1>Place Your Order Here</h1>
-          </div>
-          <div class="row">
-            <div class="col-6">
-
-              <img src={banner} width="100%" className="" />
-            </div>
-            <div class="col-6">
-              <br />
-            
-              <div className="carddd" style={{ width: "80%" }}>
-
-                <div className="card-body">
-                  <div className="col-md-8 mt-4 mx-auto">
-                    <h1 className="text-center topic">Order Detail Form </h1>
-
-                    <form className="needs-validation" align="center" style={{ width: "100%" }} >
-                      <div className="form-group" style={{ marginBottom: '15px' }}>
-                        <label style={{ marginBottom: '5px' }} className="topic">Customer Name: </label>
-                        <input type="text"
-                          id="validationTooltip01"
-                          className="form-control"
-                          name="name"
-                          placeholder="Enter Your Name"
-                          value={this.state.name}
-                          onChange={this.handleInputChange} required />
-
-
-                      </div>
-
-
-                      <label style={{ marginBottom: '5px' }} className="topic">Address: </label>
-                      <div class="row">
-                        <div class="col">
-                          <input type="number"
-                            className="form-control"
-                            name="postalNo"
-                            placeholder="postal no"
-                            value={this.state.postalNo}
-                            onChange={this.handleInputChange}
-                            required />
-                        </div>
-
-                        <div class="col">
-                          <input type="text"
-                            className="form-control"
-                            name="street"
-                            placeholder="street"
-                            value={this.state.street}
-                            onChange={this.handleInputChange} />
-                        </div>
-
-                        <div class="col">
-                          <input type="text"
-                            className="form-control"
-                            name="town"
-                            placeholder="town"
-                            value={this.state.town}
-                            onChange={this.handleInputChange} />
-                        </div>
-                      </div>
-
-                      <div className="form-group" style={{ marginBottom: '15px' }}>
-                        <label style={{ marginBottom: '5px' }} className="topic">Contact No: </label>
-                        <input type="text"
-                          className="form-control"
-                          name="contactNo"
-                          placeholder="Enter Your TeleNo"
-                          value={this.state.contactNo}
-                          onChange={this.handleInputChange} />
-                      </div>
-
-
-                      <div className="form-group" style={{ marginBottom: '15px' }}>
-                        <label style={{ marginBottom: '5px' }} className="topic">Order Date</label>
-                        <input type="date"
-                          className="form-control"
-                          name="orderDate"
-                          placeholder="Date"
-                          value={this.state.orderDate}
-                          onChange={this.handleInputChange} />
-                      </div>
-
-                      <label style={{ marginBottom: '5px' }} className="topic">Order Status: Pending</label>
-                      <br />
-                      <label style={{ marginBottom: '5px' }} className="topic">Order Total: {this.state.cartTotal}</label>
-                      <br />
-
-
-                      <button className="btn btn-dark" type="submit" style={{ marginTop: '15px' }} onClick={this.onSubmit}>
-                        <i className="far fa-check-square"></i>
-                        &nbsp; Continue with Payment
-                      </button>
-                      <br />
-
-                    </form>
-
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <br />
-          <br />
-          {this.state.name}
-          <section id="hire">
-            <div className="topic">
-              <div class="container-fluid">
-                <div class="Jumbotron jumbotron-fluid">
-                  <div className="container hire">
-                    <marquee direction="left"><p class="display-3 "><img src="http://gifgifs.com/animations/jobs-people/painters/Painting_the_fence.gif" height="10%" />Thanks for choosing CITY FURNITURE</p></marquee>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div> */}
+  
       </div>
     )
   }
