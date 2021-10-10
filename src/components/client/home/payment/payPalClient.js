@@ -82,6 +82,8 @@ class payPal extends Component {
             swal("Invalid Customer Password!", "Please recheck your password", "error");
         }
 
+        //validation end here
+
         else {
 
             axios.post("https://furniture-store-backend.herokuapp.com/api/postPay/save", Paypal)
