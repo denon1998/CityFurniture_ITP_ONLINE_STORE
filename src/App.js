@@ -36,7 +36,7 @@ import CreateFAQs from "./components/client/home/contactus/FAQs/create-FAQs";
 import Createsuggestion from "./components/client/home/contactus/suggestion/create-suggestion";
 //import Rating from './components/client/home/contactus/rate/Ratings';
 
-//import Footer from './components/client/home/Footer';
+import Footer from './components/client/home/Footer';
 
 
 import EditPosts from './components/client/home/payment/AdminClientUpdateCard';
@@ -60,9 +60,10 @@ function App() {
     return (<
         Router >
         <CartProvider>
+        <Navbar />
             <
                 div className="container" >
-                <Navbar />
+              
                 <br />
                 <
                     Route path="/admin"
@@ -133,6 +134,7 @@ function App() {
 
             </
             div >
+            <Footer/>
         </CartProvider>
     </Router>
     );

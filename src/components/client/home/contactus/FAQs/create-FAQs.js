@@ -177,12 +177,12 @@ export default class CreateFAQs extends Component {
 
     render() {
         return ( 
-            <div>
+            <div style={{backgroundColor:"#c2dadd"}}>
             <div class="row">
             <div class="col-6">
-            <br/>
-            <h4> How can we Help you?</h4> 
-            <h6 > Frequently asked Questions....</h6> 
+            <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h4> &nbsp; How can we Help you?</h4> 
+            <h6 >&nbsp; Frequently asked Questions....</h6> 
             <br >
             </br>
 
