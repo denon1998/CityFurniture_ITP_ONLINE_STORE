@@ -109,7 +109,7 @@ export default class Createfeedback extends Component {
                 button: "Okay!"
             })
             .then((value) => {
-                swal(window.location = 'components/client/home/contactus/rate');
+                swal(window.location = '');
             });
     }}
 

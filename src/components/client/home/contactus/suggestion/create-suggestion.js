@@ -104,7 +104,7 @@ export default class Createsuggestion extends Component {
                 button: "Okay!"
             })
             .then((value) => {
-                swal(window.location = '#');
+                swal(window.location = '');
             });
     }}
 

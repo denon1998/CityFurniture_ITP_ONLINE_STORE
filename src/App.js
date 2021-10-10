@@ -38,6 +38,11 @@ import CreateFAQs from "./components/client/home/contactus/FAQs/create-FAQs";
 import Createsuggestion from "./components/client/home/contactus/suggestion/create-suggestion";
 //import Rating from './components/client/home/contactus/rate/Ratings';
 
+<<<<<<< HEAD
+import Footer from './components/client/home/Footer';
+
+=======
+>>>>>>> ec93504a81de6d175ba7379fb626a3fa499afaff
 
 import EditPosts from './components/client/home/payment/AdminClientUpdateCard';
 import payHome from './components/client/home/payment/payHomeClient';
@@ -61,8 +66,11 @@ function App() {
 
                 div className="container" >
               
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> ec93504a81de6d175ba7379fb626a3fa499afaff
                 <br />
                 <
                     Route path="/"
@@ -116,9 +124,13 @@ function App() {
 
             </
             div >
+<<<<<<< HEAD
+            <Footer/>
+=======
 
             <Footer />
 
+>>>>>>> ec93504a81de6d175ba7379fb626a3fa499afaff
         </CartProvider>
     </Router>
     );
