@@ -97,6 +97,8 @@ class PalUpdate extends Component {
             swal("Invalid Customer Password!", "Please recheck your password", "error");
         }
 
+        //validation end here
+
         axios.put(`http://localhost:8080/paypalpost/update/${id}`, data).then((res) => {
 
             if (res.data.success) {
