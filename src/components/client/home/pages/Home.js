@@ -10,12 +10,10 @@ function Home() {
     <div>
       <HeroSection />
       <Categories />
-<<<<<<< HEAD
+
      {/*<Footer */}
-=======
-    </div>
-    <Footer />
->>>>>>> ec93504a81de6d175ba7379fb626a3fa499afaff
+  
+     </div>
     </div>
   );
 }
