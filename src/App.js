@@ -14,11 +14,11 @@ import Home from './components/client/home/pages/Home';
 import Products from './components/client/home/pages/Products';
 import Offers from './components/client/home/pages/Offers';
 
-import SignUp from './components/client/home/pages/SignUp';
+
 import Footer from './components/client/home/Footer';
 
 import OfficeFurniture from './components/client/home/pages/OfficeFurniture';
-import Footer from './components/client/home/Footer';
+
 
 import HomeClientProduct from './components/client/home/products/HomeClientProduct';
 import officeHome from './components/client/home/officeFurniture/officeHome';
