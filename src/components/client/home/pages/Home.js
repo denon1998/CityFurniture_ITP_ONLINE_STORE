@@ -2,7 +2,7 @@ import React from 'react';
 import '../../../../App.css';
 import Categories from '../Categories';
 import HeroSection from '../HeroSection';
-//import Footer from '../Footer';
+
 
 function Home() {
   return (
@@ -10,10 +10,7 @@ function Home() {
     <div>
       <HeroSection />
       <Categories />
-
-     {/*<Footer */}
-  
-     </div>
+    </div>
     </div>
   );
 }

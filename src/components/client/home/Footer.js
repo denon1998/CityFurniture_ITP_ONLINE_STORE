@@ -32,7 +32,7 @@ function Footer() {
             <Link to='/'>Sign-Up</Link>
             <Link to='/home'>Home</Link>
             <Link to='/products'>Products</Link>
-            <Link to='/offers'>Offers</Link>
+            <Link to='/OffersHome'>Offers</Link>
             
           </div>
           <div className='footer-link-items'>
