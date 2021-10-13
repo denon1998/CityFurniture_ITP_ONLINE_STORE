@@ -82,7 +82,7 @@ export default class Createcontact extends Component {
                 button: "Okay!"
             })
             .then((value) => {
-                swal(window.location = '#');
+                swal(window.location = '');
             });
     }}
 
@@ -128,7 +128,7 @@ export default class Createcontact extends Component {
         and join our journey of making a million beautiful homes.
        </p>
 
-            <img src="https://www.blogtyrant.com/wp-content/uploads/2019/12/best-contact-us-pages-2.png" width="90%" height="110% " />
+    
             </div>
   
     <div class="col-6">

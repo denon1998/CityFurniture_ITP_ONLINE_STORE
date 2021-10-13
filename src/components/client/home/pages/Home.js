@@ -3,6 +3,7 @@ import '../../../../App.css';
 import Categories from '../Categories';
 import HeroSection from '../HeroSection';
 
+
 function Home() {
   return (
     <div>

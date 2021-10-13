@@ -13,8 +13,12 @@ import cuslog from "./components/cuslog.component";
 import Home from './components/client/home/pages/Home';
 import Products from './components/client/home/pages/Products';
 import Offers from './components/client/home/pages/Offers';
-import OfficeFurniture from './components/client/home/pages/OfficeFurniture';
+
+
 import Footer from './components/client/home/Footer';
+
+import OfficeFurniture from './components/client/home/pages/OfficeFurniture';
+
 
 import HomeClientProduct from './components/client/home/products/HomeClientProduct';
 import officeHome from './components/client/home/officeFurniture/officeHome';
@@ -36,6 +40,9 @@ import Createsuggestion from "./components/client/home/contactus/suggestion/crea
 //import Rating from './components/client/home/contactus/rate/Ratings';
 
 
+//import Footer from './components/client/home/Footer';
+
+
 import EditPosts from './components/client/home/payment/AdminClientUpdateCard';
 import payHome from './components/client/home/payment/payHomeClient';
 import NavBar from './components/client/home/payment/AdminNavbar';
@@ -55,8 +62,13 @@ function App() {
         <CartProvider>
         <Navbar />
             <
-                div className="" >
-                
+
+                div className="container" >
+              
+
+
+
+
                 <br />
                 <
                     Route path="/"
@@ -108,9 +120,10 @@ function App() {
                 <Route path = "/palSuccess" component={paypalSuccess}></Route>
             
 
-            </
-            div >
-            <Footer />
+
+            </div >
+            <Footer />        
+
         </CartProvider>
     </Router>
     );
