@@ -18,6 +18,7 @@ import Footer from './components/client/home/Footer';
 
 import HomeClientProduct from './components/client/home/products/HomeClientProduct';
 import officeHome from './components/client/home/officeFurniture/officeHome';
+import OffersHome from './components/client/home/pages/OffersHome';
 
 
 import { CartProvider } from "react-use-cart";
@@ -77,7 +78,7 @@ function App() {
                 <Route path='/products' exact component={Products} />
                 <Route path='/offers' exact component={Offers} />
                 <Route path='/officeFurniture' exact component={OfficeFurniture} />
-
+                <Route path='/OffersHome' exact component={OffersHome} />
                 
                 <Route path="/products" exact component={HomeClientProduct}></Route>
                 <Route path="/officeFurniture" exact component={officeHome}></Route>
@@ -109,7 +110,7 @@ function App() {
 
             </
             div >
-            <footer />
+            <Footer />
         </CartProvider>
     </Router>
     );
